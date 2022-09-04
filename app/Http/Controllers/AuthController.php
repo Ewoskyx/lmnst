@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Panel;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AuthRequest;
@@ -11,7 +11,7 @@ class AuthController extends Controller
     public function login()
     {
         if (Auth::check()) {
-            return redirect()->route('anasayfa');
+            return redirect()->route('home');
         }
         return view('auth.login');
     }
@@ -21,7 +21,7 @@ class AuthController extends Controller
         $validated = $request->validated(); 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->route('anasayfa');
+            return redirect()->route('home');
         }
         return redirect()->route('login')->withError('Şifre yanlış!');
     }

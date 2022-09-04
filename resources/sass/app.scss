@@ -1,0 +1,196 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #f4f4f4;
+    height: 100vh;
+    overflow: hidden;
+
+    .test {
+        border: 1px solid green;
+    }
+
+    .hide {
+        display: none;
+    }
+    .wrapper {
+        height: 100%  !important;
+        width: 100%;
+
+        form {
+            width: 100%;
+            .custom_input {
+                text-indent: 8px;
+            }
+            .forgot_link {
+                margin-left: 13%;
+            }
+        }
+    }
+}
+
+.side {
+    box-shadow: 5px 5px 5px rgba($color: #000000, $alpha: 0.2);
+    z-index: 5000;
+    .top_side_icons {
+        font-size: 1.9em;
+    }
+    nav {
+        position: relative;
+        border-top: 1px solid rgba($color: #333, $alpha: 0.2);
+        border-bottom: 1px solid rgba($color: #333, $alpha: 0.2);
+        .side-menu {
+            list-style-type: none;
+            width: 100%;        
+            li {
+                a {
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    color: #333;
+                    font-size: 1.15em;
+    
+                    .side_icons {
+                        border-radius: 50%;
+                        border: 1px solid #333;
+                        font-size: 1.5em;
+                        padding: 4px;
+                    }
+                }
+            }
+        }
+
+        .side_btns {
+            margin-top: 12px;
+        }
+
+        .side_bottom {
+            margin-top: 12px;
+            li {
+                list-style-type: none;
+
+                a {
+                    text-decoration: none;
+                    color: #333;
+                    
+                    .side_bottom_icons {
+                        font-size: 1.3em;
+                        padding: 4px;
+                    }
+                }
+                .small_logo {
+                    width: 60px;
+                    height: 25px;
+                }
+            }
+
+        }
+    }
+
+   .dropdown {
+    position: absolute;
+    top:0;
+    left:15%;
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+    
+    .drp-menu {
+        transition: all 1s ease-in-out;
+    }
+
+    .drop-btn {
+        background-color: transparent;
+        border: none;
+    }
+    &:hover {
+        .drop-btn {
+            color: #199235;
+        }
+        
+        a {
+            color: #199235;
+        }
+    }   
+   }
+
+   .footer_logo {
+    width: 50px;
+    height: 20px;
+   }
+}
+
+footer {
+    position: absolute;
+    bottom:0;
+    left: 12%;
+    width: 100%;
+    height: 50px;
+    z-index: 0;
+
+    h6 {
+        width: 15%;
+    }
+}
+
+header {
+    position: absolute;
+    height: 50px;
+    top: 0;
+    left: 17%;
+    width: 100%;
+    z-index: 0;
+    display: flex;
+    justify-content: flex-start;
+
+    nav {
+        border-bottom: 1px solid rgba($color: #333, $alpha: 0.2);
+        li {
+            height: 100%;
+            list-style-type: none;
+            border-radius: 12px;
+            transition: all 0.7s ease-in-out;
+            &:hover {
+                background-color: #199235;
+                cursor: pointer;
+               
+                a {
+                    color: #f4f4f4;
+                }
+            }
+            a {
+                text-decoration: none;
+                color: #333;
+                font-size: 1.15em;
+                height: 100%;
+                margin-left: 8px;
+            }
+        }
+       .country {
+        position: absolute;
+        right: 25%;
+    
+        .tr_icon {
+            width: 30px;
+            height: 30px;
+            margin-top: 8px;
+        }
+       }
+    }
+
+   
+}
