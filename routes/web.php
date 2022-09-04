@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Public Routes
@@ -14,12 +15,12 @@ Route::controller(AuthController::class)->group(function(){
 // Protected Routes
 Route::group(['middleware'=>'auth'],function() {
     Route::get('/',[HomeController::class,"index"])->name('home');
-
-    // Route::controller(TurbeController::class)->group(function () {
-    //     Route::group(['prefix' => 'turbeler'], function() {
-    //         Route::get('', 'list')->name('panel.turbe_list');
-    //         Route::get('form/{unique?}', 'form')->name('panel.turbe_form');
-    //         Route::post('form/{unique?}', 'save')->name('panel.turbe_save');
-    //         Route::delete('delete', 'delete')->name('panel.turbe_delete');
-    //     });
+    Route::controller(UserController::class)->group(function () {
+        Route::get('users', 'index')->name('index');
+        Route::get('create', 'create')->name('create');
+        Route::post('store', 'store')->name('store');
+        Route::get('edit/{id}', 'edit')->name('edit');
+        Route::patch('update/{id}', 'update')->name('update');
+        Route::delete('delete/{id}', 'destroy')->name('delete');
     });
+});

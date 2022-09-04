@@ -14,7 +14,7 @@
 }
 
 body {
-    background-color: #f4f4f4;
+    background-color: #e1dddd;
     height: 100vh;
     overflow: hidden;
 
@@ -41,6 +41,13 @@ body {
     }
 }
 
+.main {
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    width: calc(100% - 400px);;
+    height: calc(100vh - 100px);
+}
 .side {
     box-shadow: 5px 5px 5px rgba($color: #000000, $alpha: 0.2);
     z-index: 5000;
@@ -135,7 +142,7 @@ body {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom:0;
     left: 12%;
     width: 100%;
@@ -148,7 +155,7 @@ footer {
 }
 
 header {
-    position: absolute;
+    position: fixed;
     height: 50px;
     top: 0;
     left: 17%;
@@ -191,6 +198,78 @@ header {
         }
        }
     }
+}
 
-   
+.table-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 64px;
+    .search-ico {
+        position: absolute;
+        left:4px;
+        top:20px;
+        font-size: 1.1em;
+    }
+    .custom-search {
+        text-indent: 28px;
+        height: 36px;
+    }
+
+    .filter_btns {
+        position: absolute;
+        right: 5%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        justify-self: end;
+        .fltr-btn {
+            color: #199235;
+            border: 1px solid #199235;
+            background-color: transparent;
+            border-radius: 12px;
+            width: 80px;
+        }
+    }
+}
+
+table {
+    background-color: #fff !important;
+    border-radius: 24px;
+    tbody {
+        .tbl_btn_delete,
+        .tbl_btn_update {
+            border-radius: 12px;
+            background-color: transparent;
+            padding: 6px 12px;
+            transition: all 300ms ease-out;
+            &:hover {
+                background-color: rgb(168, 151, 151);
+            }
+        }
+        .tbl_btn_update {
+            color: #199235;
+            border: 1px solid #199235;
+        }
+        .tbl_btn_delete {
+            color: #c80808;
+            border: 1px solid #c80808;
+        }
+    }
+}
+
+.edit-btn {
+    background-color: transparent;
+    color: #333;
+}
+
+.save_div {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid green;
+    align-items: start;
 }

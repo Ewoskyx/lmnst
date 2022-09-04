@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li class="p-3">
-                <a href="" class="">
+                <a href="{{ route('create') }}" class="">
                     <ion-icon name="settings-outline"></ion-icon>
                     <span>Yönetim</span>
                 </a>

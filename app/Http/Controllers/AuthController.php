@@ -11,17 +11,17 @@ class AuthController extends Controller
     public function login()
     {
         if (Auth::check()) {
-            return redirect()->route('home');
+            return redirect()->route('index');
         }
         return view('auth.login');
     }
 
     public function userLogin(AuthRequest $request)
     {        
-        $validated = $request->validated(); 
+        $request->validated(); 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->route('home');
+            return redirect()->route('index');
         }
         return redirect()->route('login')->withError('Şifre yanlış!');
     }
