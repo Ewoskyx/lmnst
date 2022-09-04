@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AuthRequest extends FormRequest
+class UsersRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -19,11 +19,12 @@ class AuthRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function rules()
     {
         return [
+          'name' => 'required',
           'email' => 'required',
           'password' => 'required',
         ];
@@ -32,6 +33,7 @@ class AuthRequest extends FormRequest
     public function messages()
     {
         return [
+         'name.required' => ':attribute alanı zorunludur',
          'password.required' => ':attribute zorunludur.',
          'email.required' => ':attribute zorunludur.',
        ];
@@ -40,6 +42,7 @@ class AuthRequest extends FormRequest
     public function attributes()
     {
         return [
+            'name' => 'Ad',
             'password' => 'Şifre',
             'email' => 'E-Posta',
         ];

@@ -11,6 +11,9 @@
 
 <body>
     @include('layout.header')
+    <main class="main">
+        @yield('content')
+    </main>
     @include('layout.side')
     @include('layout.footer')
     @yield('scripts')
