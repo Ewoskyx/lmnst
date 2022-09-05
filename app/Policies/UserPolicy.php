@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Auth\Access\Response;
 
 class UserPolicy
 {
@@ -40,7 +41,6 @@ class UserPolicy
      */
     public function create(User $user)
     {
-
     }
 
     /**
@@ -52,7 +52,9 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-        //
+        return $user->is_admin || $model->id === $user->id
+            ? Response::allow()
+            : Response::deny('Bu işlemi gerçekleştiremezsiniz');
     }
 
     /**
@@ -64,10 +66,9 @@ class UserPolicy
      */
     public function delete(User $user, User $model)
     {
-        if ($user->is_admin || $model->id === $user->id) {
-            return true;
-        }
-        return false;
+        return $user->is_admin || $model->id === $user->id
+            ? Response::allow()
+            : Response::deny('Bu işlemi gerçekleştiremezsiniz');
     }
 
     /**

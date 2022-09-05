@@ -27,13 +27,22 @@
                 <a href="#" class="forgot_link text-muted text-decoration-none align-self-start">Şifremi Unuttum</a><br>
                 <input type="submit" class="btn btn-success py-2 px-4" value="Giriş">
                 @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+                    <div class="alert alert-danger">
+                        <p><strong>Lütfen dikkat !</strong></p>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                @if (session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
+
+                @if (session('error'))
+                    <div class="alert alert-danger">{{ session('error') }}</div>
                 @endif
               </form>
         </div>
