@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UsersRequest;
+use App\Http\Requests\UsersUpdateRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -20,13 +21,14 @@ class UserController extends Controller
 
     public function store(UsersRequest $request)
     {
-        $validated = $request->validated();
-       
-       User::create([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'password' => Hash::make($validated['password']),
+        $request->validated();
+        $user = new User([
+           'name' =>  $request->get('name'),
+           'email' => $request->get('email'),
+           'password' => Hash::make($request->get('password')),
+           'is_admin' => $request->has('is_admin') ? true : false,
         ]);
+        $user->save();
         return redirect('users')->with('success', 'Kullanıcı kayıt edildi!');
     }
 
@@ -35,13 +37,14 @@ class UserController extends Controller
         return view('users.edit', ['user' => $user]); 
     }
 
-    public function update(UsersRequest $request, $id)
+    public function update(UsersUpdateRequest $request, $id)
     {
         $request->validated();
         $user = User::find($id);
         $user->name =  $request->get('name');
         $user->email = $request->get('email');
         $user->password = Hash::make($request->get('password'));
+        $user->is_admin = $request->has('is_admin') ? true : false;
         $user->save();
         return redirect('users')->with('success', 'Kullanıcı bilgileri güncellendi !'); 
     }

@@ -14,9 +14,10 @@
 }
 
 body {
+    position: relative;
     background-color: #e1dddd;
-    height: 100vh;
-    overflow: hidden;
+    height: auto;
+    display: flex;
 
     .test {
         border: 1px solid green;
@@ -41,16 +42,21 @@ body {
     }
 }
 
+// Main Wrapper
 .main {
     position: absolute;
-    left: 20%;
-    top: 15%;
-    width: calc(100% - 400px);;
-    height: calc(100vh - 100px);
+    padding: 0 24px;
+    left: 300px;
+    top: 100px;
+    width: calc(100% - 300px);
 }
+
+// Side Panel
 .side {
     box-shadow: 5px 5px 5px rgba($color: #000000, $alpha: 0.2);
     z-index: 5000;
+    position: fixed;
+    width: 300px;
     .top_side_icons {
         font-size: 1.9em;
     }
@@ -141,31 +147,33 @@ body {
    }
 }
 
+// Footer
 footer {
     position: fixed;
     bottom:0;
-    left: 12%;
-    width: 100%;
+    right: 0;
+    width: calc(100% - 300px);
     height: 50px;
     z-index: 0;
-
     h6 {
         width: 15%;
     }
 }
 
+// Header
 header {
     position: fixed;
-    height: 50px;
+    height: 70px;
     top: 0;
-    left: 17%;
-    width: 100%;
-    z-index: 0;
+    right: 0;
+    width: calc(100% - 300px);
+    z-index: 5000;
     display: flex;
     justify-content: flex-start;
 
     nav {
-        border-bottom: 1px solid rgba($color: #333, $alpha: 0.2);
+        box-shadow: 5px 5px 5px rgba($color: #000000, $alpha: 0.2);
+
         li {
             height: 100%;
             list-style-type: none;
@@ -189,7 +197,7 @@ header {
         }
        .country {
         position: absolute;
-        right: 25%;
+        right: 5%;
     
         .tr_icon {
             width: 30px;
@@ -200,6 +208,8 @@ header {
     }
 }
 
+
+// Table
 .table-top {
     position: relative;
     display: flex;
@@ -237,6 +247,7 @@ header {
 table {
     background-color: #fff !important;
     border-radius: 24px;
+    padding-bottom: 120px !important;
     tbody {
         .tbl_btn_delete,
         .tbl_btn_update {
@@ -245,12 +256,14 @@ table {
             padding: 6px 12px;
             transition: all 300ms ease-out;
             &:hover {
-                background-color: rgb(168, 151, 151);
+                background-color: rgb(83, 72, 72);
+                color: #fff;
             }
         }
         .tbl_btn_update {
             color: #199235;
             border: 1px solid #199235;
+            text-decoration: none;
         }
         .tbl_btn_delete {
             color: #c80808;
@@ -259,6 +272,7 @@ table {
     }
 }
 
+// Components
 .edit-btn {
     background-color: transparent;
     color: #333;
@@ -266,10 +280,10 @@ table {
 
 .save_div {
     position: absolute;
-    width: 100%;
+    width: calc(100% - 300px);
+    left: 10%;
     height: 600px;
     display: flex;
     justify-content: flex-start;
-    border: 1px solid green;
     align-items: start;
 }

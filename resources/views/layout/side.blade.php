@@ -1,4 +1,4 @@
-<aside class="col-2 bg-light h-100 side px-1">
+<aside class="bg-light h-100 side px-1">
     <div class="page-logo">
         <a href="#" class="d-flex align-items-center  justify-content-between ps-5 pt-2 position-relative">
             <img src="{{ asset('images/limonist.png') }}" alt="logo" class="w-50 h-50">
@@ -10,10 +10,12 @@
             <button class="drop-btn" type="button" id="drop-btn"><ion-icon name="person-outline" class="top_side_icons"></ion-icon>
              Kullanıcı İşlemleri<ion-icon name="chevron-down-outline" class="ms-3"></ion-icon>
             </button>
+            @if (Auth()->user()->is_admin) 
             <div class="drp-menu hide" id="drp-menu">
                 <ion-icon name="pencil-outline" class="ms-3"></ion-icon>
-              <a class="drp-item" href="#">Kullanıcılar</a>
+              <a class="drp-item" href="{{ route('create') }}">Kullanıcılar</a>
             </div>
+            @endif
         </div>    
         <ul id="side-menu" class="side-menu h-25 d-flex flex-column justify-content-between">
             <li class="">
