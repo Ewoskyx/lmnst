@@ -14,6 +14,6 @@
                 </a>
             </li>
         </ul>
-        <a href="" class="country"> <img class="tr_icon" src="{{ asset('images/tr.png') }}" alt="TR"></a>
+        <a href="{{ route('lang') }}" class="country"> <img class="tr_icon" src="{{ asset('images/tr.png') }}" alt="TR"></a>
     </nav>
 </header>
