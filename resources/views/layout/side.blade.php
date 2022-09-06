@@ -8,12 +8,12 @@
     <nav id="side-nav" class="side-nav d-flex flex-column mt-5 mb-5 h-75 justify-content-end">   
         <div class="dropdown mt-3">
             <button class="drop-btn" type="button" id="drop-btn"><ion-icon name="person-outline" class="top_side_icons"></ion-icon>
-             Kullanıcı İşlemleri<ion-icon name="chevron-down-outline" class="ms-3"></ion-icon>
+             @lang('custom.user_ops')<ion-icon name="chevron-down-outline" class="ms-3"></ion-icon>
             </button>
             @if (Auth()->user()->is_admin) 
             <div class="drp-menu hide" id="drp-menu">
                 <ion-icon name="pencil-outline" class="ms-3"></ion-icon>
-              <a class="drp-item" href="{{ route('create') }}">Kullanıcılar</a>
+              <a class="drp-item" href="{{ route('create') }}">@lang('custom.users')</a>
             </div>
             @endif
         </div>    
@@ -21,25 +21,25 @@
             <li class="">
                 <a href="#">
                     <ion-icon name="notifications-outline" class="side_icons"></ion-icon>
-                    <span class="ms-3">Bildirimler</span>
+                    <span class="ms-3">@lang('custom.notifications')</span>
                 </a>
             </li>
             <li class="">
                 <a href="#">
                     <ion-icon name="mail-outline" class="side_icons"></ion-icon>
-                    <span class="ms-3">Mesajlar</span>
+                    <span class="ms-3">@lang('custom.messages')</span>
                 </a>
             </li>
             <li class="">
                 <a href="#">
                     <ion-icon name="settings-outline" class="side_icons"></ion-icon>
-                    <span class="ms-3">Profil ve Ayarlar</span>
+                    <span class="ms-3">@lang('custom.profile_and_settings')</span>
                 </a>
             </li>
         </ul>
         <div class="side_btns d-flex flex-column gap-1 align-items-center">
             <button class="rounded-5 border-0 p-1 w-75">Limonist</button>
-            <button class="rounded-5 border-0 p-1 w-75">Görevi</button>
+            <button class="rounded-5 border-0 p-1 w-75">@lang('custom.task')</button>
         </div>
         <div class="side_bottom">
             <ul class="d-flex justify-content-between mt-3 align-items-center me-2">
@@ -49,13 +49,13 @@
                 <li>
                     <a href="#" class="d-flex flex-column">
                         <ion-icon name="chatbox-outline" class="side_bottom_icons"></ion-icon>
-                        <span class="">Canlı Yardım</span>
+                        <span class="">@lang('custom.live_support')</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('logout') }} " class="d-flex flex-column">
                         <ion-icon name="power-outline" class="side_bottom_icons"></ion-icon>
-                        <span class="">Çıkış</span>
+                        <span class="">@lang('custom.logout')</span>
                     </a>
                 </li>
             </ul>

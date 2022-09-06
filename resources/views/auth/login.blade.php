@@ -13,19 +13,19 @@
         <div class="col-4 d-flex flex-column align-items-center gap-3">
             <img class="w-25 h-25" src="{{ asset('images/limonist.png') }}" alt="logo">
             <div class="hdr">
-                <h4 class="font-weight-bold text-center">Giriş</h4>
-                <small>Giriş bilgilerinizi giriniz</small>
+                <h4 class="font-weight-bold text-center">@lang('custom.login')</h4>
+                <small>@lang('custom.login_credentials')</small>
             </div>
             <form method="post" action="{{ route('login') }}" class="d-flex flex-column align-items-center gap-3 mt-5">
                 @csrf
                 <div class="form-group d-flex justify-content-center w-100">
-                  <input type="email" class=" custom_input form-control p-2  w-75 rounded-5 border-0" id="email" name="email" placeholder="E-Posta">
+                  <input type="email" class=" custom_input form-control p-2  w-75 rounded-5 border-0" id="email" name="email" placeholder=@lang('custom.email')>
                 </div>
                 <div class="form-group d-flex justify-content-center w-100">
-                  <input type="password" class=" custom_input form-control p-2  w-75 rounded-5 border-0" id="password"  name="password" placeholder="Şifre">
+                  <input type="password" class=" custom_input form-control p-2  w-75 rounded-5 border-0" id="password"  name="password" placeholder=@lang('custom.password')>
                 </div>
-                <a href="#" class="forgot_link text-muted text-decoration-none align-self-start">Şifremi Unuttum</a><br>
-                <input type="submit" class="btn btn-success py-2 px-4" value="Giriş">
+                <a href="#" class="forgot_link text-muted text-decoration-none align-self-start">@lang('custom.forgot_password')</a><br>
+                <input type="submit" class="btn btn-success py-2 px-4" value=@lang('custom.login')>
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <p><strong>Lütfen dikkat !</strong></p>
