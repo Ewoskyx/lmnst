@@ -6,10 +6,10 @@
         <div class="table-top">
             <ion-icon name="search-outline" class="search-ico"></ion-icon>
             <input type="search" class="custom-search rounded-5 w-75 border-0"
-                placeholder="Lütfen aramak istediğiniz içeriğe ait bir kelime yazınız">
+                placeholder=@lang('custom.search_for')>
             <div class="filter_btns d-flex flex-column">
-                <button class="fltr-btn">Filtrele</button>
-                <button class="fltr-btn">Temizle</button>
+                <button class="fltr-btn">@lang('custom.filter')</button>
+                <button class="fltr-btn">@lang('custom.clean')</button>
             </div>
         </div>
 
@@ -17,10 +17,10 @@
             <thead>
                 <tr>
                     <th class="text-center" scope="col">ID</th>
-                    <th class="text-center" scope="col">Adı</th>
-                    <th class="text-center" scope="col">Email</th>
-                    <th class="text-center" scope="col">Oluşturulma Tarihi</th>
-                    <th class="text-center" scope="col">Hareketler</th>
+                    <th class="text-center" scope="col">@lang('custom.name')</th>
+                    <th class="text-center" scope="col">@lang('custom.email')</th>
+                    <th class="text-center" scope="col">@lang('custom.creation_date')</th>
+                    <th class="text-center" scope="col">@lang('actions')</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,13 +33,13 @@
                         @if (Auth()->user()->is_admin) 
                         <td class="d-flex justify-content-center">
                             <a href="{{ route('edit', $user->id) }}" class="tbl_btn_update me-2">
-                                <ion-icon name="pencil-outline"></ion-icon>Düzenle
+                                <ion-icon name="pencil-outline"></ion-icon>@lang('custom.update')
                             </a>
                             <form action="{{ route('delete', $user->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="tbl_btn_delete me-2">
-                                    <ion-icon name="trash-outline"></ion-icon>Sil
+                                    <ion-icon name="trash-outline"></ion-icon>@lang('custom.delete')
                                 </button>
                             </form>
                         </td>

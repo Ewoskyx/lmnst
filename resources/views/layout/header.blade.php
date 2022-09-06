@@ -4,13 +4,13 @@
             <li class="p-3">
                 <a href="{{ route('chart') }}"  class="">
                     <ion-icon name="bar-chart-outline"></ion-icon>
-                    <span>Raporlar</span>
+                    <span>@lang('custom.reports')</span>
                 </a>
             </li>
             <li class="p-3">
                 <a href="{{ route('index') }}" class="">
                     <ion-icon name="settings-outline"></ion-icon>
-                    <span>Yönetim</span>
+                    <span>@lang('custom.management')</span>
                 </a>
             </li>
         </ul>
